@@ -95,36 +95,30 @@ class LoginView extends Component{
   render(){
 	if( this.state.step === 'form' ){
 		return(
-			<div className='home-view-component'>
-				<h1 className='title is-size-2'>Welcome ClickReact</h1>
-	
-				<ul className='is-flex'>
-					<li className='mr-2'>
-						<button className='button is-small is-primary' disabled>Login</button>
-					</li>
-                    <li>
-						<button 
-							className='button is-small'
-							onClick={ event => this.props.navigate( '/register' ) }
-						>
-						Register
-						</button>
-					</li>
-				</ul>
+			<section className='home-view-component'>
+				<h1 className='title is-size-2'>Enter ClickReact</h1>
 	
 				<BaseForm
 					content={ this.state.formValue }
 					handleSubmit={ this.onSubmit }
 				/>
-			</div>
+			</section>
 		)
 	}
     else if( this.state.step === 'error' ){
 		return(
-			<div className='home-view-component'>
+			<section className='home-view-component'>
 				<h1 className='title is-size-2'>User not found</h1>
 				<p>Your email and password not correct</p>
-			</div>
+
+				<button 
+					className='button is-small mt-4' 
+					type='button'
+					onClick={ () => this.setState({ step: 'form' }) }
+				>
+					Please try again
+				</button>
+			</section>
 		)
 	}
   }

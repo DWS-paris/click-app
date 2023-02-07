@@ -99,7 +99,7 @@ class GameView extends Component{
     else{
       if( this.state.step === 'start' ){
         return(
-          <div className='home-view-component'>
+          <section className='home-view-component'>
             <h1 className='title is-size-2'>Game play</h1>
             <button 
               className='button'
@@ -120,12 +120,12 @@ class GameView extends Component{
                 })
               }
             </ul>
-          </div>
+          </section>
         )
       }
       else if( this.state.step === 'game' ){
         return(
-          <div className='home-view-component'>
+          <section className='home-view-component'>
             <h1 className='title is-size-2'>Game play</h1>
             <button 
               className='button'
@@ -133,12 +133,12 @@ class GameView extends Component{
             >
               click me { this.state.score }
             </button>
-          </div>
+          </section>
         )
       }
       else if( this.state.step === 'finish' ){
         return(
-          <div className='home-view-component'>
+          <section className='home-view-component'>
             <h1 className='title is-size-2'>Finish</h1>
             <p>New score: <b>{ this.state.score }</b></p>
   
@@ -149,12 +149,12 @@ class GameView extends Component{
               >
                 Save new score?
               </button>
-          </div>
+          </section>
         )
       }
       else if( this.state.step === 'restart' ){
         return(
-          <div className='home-view-component'>
+          <section className='home-view-component'>
             <h1 className='title is-size-2'>Your score is saved</h1>
             
             <button 
@@ -164,12 +164,12 @@ class GameView extends Component{
               >
                 Play again?
               </button>
-          </div>
+          </section>
         )
       }
       else if( this.state.step === 'error' ){
         return(
-          <div className='home-view-component'>
+          <section className='home-view-component'>
             <h1 className='title is-size-2'>Error</h1>
             
             <button 
@@ -179,7 +179,7 @@ class GameView extends Component{
               >
                 Please try again
               </button>
-          </div>
+          </section>
         )
       }
     }

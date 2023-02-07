@@ -81,36 +81,30 @@ class RegisterView extends Component{
   render(){
 	if( this.state.step === 'form' ){
 		return(
-			<div className='home-view-component'>
-				<h1 className='title is-size-2'>Enter the ClickReact</h1>
-	
-				<ul className='is-flex'>
-					<li>
-						<button 
-							className='button is-small'
-							onClick={ event => this.props.navigate( '/' ) }
-						>
-						Login
-						</button>
-					</li>
-					<li className='mr-2'>
-						<button className='button is-small is-primary' disabled>Register</button>
-					</li>
-				</ul>
-	
+			<section className='home-view-component'>
+				<h1 className='title is-size-2'>Became a ClickReacter</h1>
+				
 				<BaseForm
 					content={ this.state.formData }
 					handleSubmit={ this.onSubmit }
 				/>
-			</div>
+			</section>
 		)
 	}
 	else if( this.state.step === 'success' ){
 		return(
-			<div className='home-view-component'>
+			<section className='home-view-component'>
 				<h1 className='title is-size-2'>Welcome in ClickReact!</h1>
 				<p>You can now login to click</p>
-			</div>
+
+				<button 
+					className='button is-small mt-4' 
+					type='button'
+					onClick={ () => this.setState({ step: 'form' }) }
+				>
+					Please try again
+				</button>
+			</section>
 		)
 	}
   }
