@@ -1,0 +1,3 @@
+[submodule "src/ve-react"]
+	path = src/ve-react
+	url = https://github.com/DWS-paris/ve-react
