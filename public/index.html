@@ -25,6 +25,18 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <script>
+			// Setup Service Worker
+			if ("serviceWorker" in navigator) {
+				if (navigator.serviceWorker.controller) { console.log("[DWSapp.io] Service Worker actif") } 
+				else {
+					navigator.serviceWorker
+					.register("./sw.js", { scope: "./" })
+					.then((reg) => { console.log("[DWSapp.io] Service Worker activé : " + reg.scope) });
+				}
+			}
+		</script>
     <title>React App</title>
   </head>
   <body class="p-6">
